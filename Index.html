@@ -12,6 +12,10 @@
       --secondary: #f6e3ef;
       --text: #333;
       --hover: #c44d94;
+      html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 140px;
+}
     }
 
     /* Global Styles */
@@ -165,7 +169,7 @@
 
   <!-- Services -->
   <section class="section" id="services">
-    <h2>Our Services</h2>
+    <h2>My Services</h2>
     <div class="services-list">
       <div> Regular Retwist — $60</div>
       <div> Barrel Twist — $65</div>
@@ -215,3 +219,11 @@
 >
   Book Appointment
 </a>
+<script>
+  <div onclick=" goToBooking()">MY SERVICES-60</div> {
+    document.getElementById("booking").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+</script>
+</body>
