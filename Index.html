@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +7,15 @@
   <meta name="description" content="Exotic Hair Salon in Cincinnati – Luxury hair services including retwists, twists, braids, and more. Book online today!">
 
   <style>
-    /* Floating Book Button */
-.floating-book {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--primary);
-  color: white;
-  padding: 14px 22px;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  z-index: 9999;
-  transition: transform 0.2s ease, background 0.3s ease;
-}
-
-.floating-book:hover {
-  background: var(--hover);
-  transform: scale(1.05);
-}
     :root {
       --primary: #d75ba5;
       --secondary: #f6e3ef;
       --text: #333;
       --hover: #c44d94;
+      html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 140px;
+}
     }
 
     /* Global Styles */
@@ -73,13 +57,15 @@
     nav a:hover { color: var(--primary); }
 
     .section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
-    }
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+  
+}
     .section:nth-child(odd) { animation-delay: 0.2s; }
     .section:nth-child(even) { animation-delay: 0.4s; }
 
@@ -101,19 +87,25 @@
       border-radius: 5px;
       transition: background 0.3s;
     }
-    .services-list div:hover {
-      background: var(--secondary);
-      cursor: default;
-    }
+    #booking {
+  padding: 10px 20px;
+}
 
-    .booking-widget iframe {
-      width: 100%;
-      max-width: 600px;
-      height: 800px;
-      border: none;
-      display: block;
-      margin: auto;
-      border-radius: 10px;
+#booking h2 {
+  margin-top: 0;
+}
+
+.booking-widget iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 520px;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+}
+    
     }
 
     .contact-info p {
@@ -146,7 +138,25 @@
       h2 { font-size: 24px; }
       .booking-widget iframe { height: 600px; }
     }
-  </style>
+  </style /* Floating Book Button */
+.floating-book {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 9999;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.floating-book:hover {
+  background: var(--hover);
+  transform: scale(1.05);
+}
 </head>
 <body>
 
@@ -163,12 +173,12 @@
 
   <!-- Services -->
   <section class="section" id="services">
-    <h2>Our Services</h2>
+    <h2>My Services</h2>
     <div class="services-list">
       <div> Regular Retwist — $60</div>
-      <div> Barrel Twist — $60</div>
+      <div> Barrel Twist — $65</div>
       <div> Two Strand Twist — $65</div>
-      <div> Braids — $60</div>
+      <div> Braids — $65</div>
       <div> Deep Massage Wash — $75</div>
       <div> Detoxic — $80</div>
     </div>
@@ -177,12 +187,19 @@
   <!-- Booking -->
   <section class="section booking-widget" id="booking">
     <h2>Book Your Appointment</h2>
-    <p style="text-align:center;">Choose your style and pay your deposit securely at the end of your booking.</p>
+    <p style="text-align:center;">Choose your service and pay your deposit securely at the end of your booking.</p>
     <iframe src="https://squareup.com/appointments/book/exotichair?embed=true" allowtransparency="true"></iframe>
-  </section>
+  </section><a
+  class="button"
+  href="https://book.squareup.com/appointments/xqnw4p7l2a5com/location/LEVVGQPXMNZCX/services"
+  target="_blank"
+  rel="noopener"
+>
+  Book Appointment
+</a>
 
   <!-- Contact -->
-  <section class="section contact-info" id="contact">
+  <section class="section animate contact-info" id="contact">
     <h2>Contact & Hours</h2>
     <p>📍 Cincinnati, OH</p>
     <p>📞 (513)540•6066</p>
@@ -195,6 +212,15 @@
   <footer>
     © 2026 Exotic Hair — All Rights Reserved
   </footer>
+
+</body>
+</html>
+<a
+  href="https://squareup.com/appointments/book/exotichair"
+  class="floating-book"
+  target="_blank"
+  rel="noopener"
+
 <a
   href="https://squareup.com/appointments/book/exotichair"
   class="floating-book"
@@ -203,5 +229,5 @@
 >
   Book Appointment
 </a>
+</script>
 </body>
-</html>
