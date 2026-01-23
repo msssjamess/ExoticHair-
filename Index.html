@@ -7,6 +7,26 @@
   <meta name="description" content="Exotic Hair Salon in Cincinnati – Luxury hair services including retwists, twists, braids, and more. Book online today!">
 
   <style>
+    /* Floating Book Button */
+.floating-book {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 9999;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.floating-book:hover {
+  background: var(--hover);
+  transform: scale(1.05);
+}
     :root {
       --primary: #d75ba5;
       --secondary: #f6e3ef;
