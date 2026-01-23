@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exotic Hair Salon</title>
+  <meta name="description" content="Exotic Hair Salon in Cincinnati – Luxury hair services including retwists, twists, braids, and more. Book online today!">
+
+  <style>
+    :root {
+      --primary: #d75ba5;
+      --secondary: #f6e3ef;
+      --text: #333;
+      --hover: #c44d94;
+    }
+
+    /* Global Styles */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      scroll-behavior: smooth;
+    }
+
+    a { text-decoration: none; }
+
+    header {
+      background: var(--secondary);
+      padding: 40px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    header p { margin-top: 10px; font-size: 18px; }
+
+    nav a {
+      margin: 0 15px;
+      color: var(--text);
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--primary); }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    .section:nth-child(odd) { animation-delay: 0.2s; }
+    .section:nth-child(even) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .services-list div {
+      margin: 10px 0;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .services-list div:hover {
+      background: var(--secondary);
+      cursor: default;
+    }
+
+    .booking-widget iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 800px;
+      border: none;
+      display: block;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+    .button:hover { background: var(--hover); }
+
+    footer {
+      background: var(--secondary);
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 36px; }
+      h2 { font-size: 24px; }
+      .booking-widget iframe { height: 600px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Exotic Hair</h1>
+    <p>Where Luxury & Beauty Come Together</p>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#booking">Book</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services-list">
+      <div> Regular Retwist — $60</div>
+      <div> Barrel Twist — $60</div>
+      <div> Two Strand Twist — $65</div>
+      <div> Braids — $60</div>
+      <div> Deep Massage Wash — $75</div>
+      <div> Detoxic — $80</div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="section booking-widget" id="booking">
+    <h2>Book Your Appointment</h2>
+    <p style="text-align:center;">Choose your service, stylist, and pay your deposit securely.</p>
+    <iframe src="https://squareup.com/appointments/book/exotichair?embed=true" allowtransparency="true"></iframe>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact-info" id="contact">
+    <h2>Contact & Hours</h2>
+    <p>📍 Cincinnati, OH</p>
+    <p>📞 (513)540•6066</p>
+    <p>📧 msss.jamess@gmail.com</p>
+    <p><strong>Hours:</strong> Sunday–Friday, 8am–6pm (Saturday closed)</p>
+    <a href="tel:+15135406066" class="button">Call Us Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 Exotic Hair — All Rights Reserved
+  </footer>
+
+</body>
+</html>
