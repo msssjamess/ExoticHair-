@@ -8,77 +8,86 @@
 
   <style>
     :root {
-  --primary: #d75ba5;
-  --secondary: #f6e3ef;
-  --text: #333;
-  --hover: #c44d94;
-}
-
-html {
+      --primary: #d75ba5;
+      --secondary: #f6e3ef;
+      --text: #333;
+      --hover: #c44d94;
+      html {
   scroll-behavior: smooth;
   scroll-padding-top: 140px;
 }
+    }
 
-* { box-sizing: border-box; }
+    /* Global Styles */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      scroll-behavior: smooth;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: var(--text);
-  background: #fff;
-}
+    a { text-decoration: none; }
 
-a { text-decoration: none; }
+    header {
+      background: var(--secondary);
+      padding: 40px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    header p { margin-top: 10px; font-size: 18px; }
 
-header {
-  background: var(--secondary);
-  padding: 40px 20px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+    nav a {
+      margin: 0 15px;
+      color: var(--text);
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--primary); }
 
-header h1 {
-  margin: 0;
-  font-size: 48px;
-  color: var(--primary);
-}
-
-nav a {
-  margin: 0 15px;
-  color: var(--text);
-  font-weight: bold;
-}
-
-.section {
+    .section {
   padding: 60px 20px;
   max-width: 900px;
   margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
 }
-
-h2 {
-  color: var(--primary);
-  margin: 0 0 20px;
-  text-align: center;
+  
 }
+    .section:nth-child(odd) { animation-delay: 0.2s; }
+    .section:nth-child(even) { animation-delay: 0.4s; }
 
-/* SERVICES CLICKABLE */
-.services-list a div {
-  margin: 10px 0;
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.services-list a div:hover {
-  background: var(--secondary);
-}
+    h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 28px;
+      text-align: center;
+    }
 
-/* BOOKING GAP FIX */
-#booking {
+    .services-list div {
+      margin: 10px 0;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    #booking {
   padding: 10px 20px;
 }
 
@@ -95,11 +104,58 @@ h2 {
   margin: 0 auto;
   border-radius: 10px;
 }
+}
+    
+    }
 
-footer {
-  background: var(--secondary);
-  padding: 20px;
-  text-align: center;
+    .contact-info p {
+      margin: 5px 0;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+    .button:hover { background: var(--hover); }
+
+    footer {
+      background: var(--secondary);
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 36px; }
+      h2 { font-size: 24px; }
+      .booking-widget iframe { height: 600px; }
+    }
+  </style /* Floating Book Button */
+.floating-book {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 9999;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.floating-book:hover {
+  background: var(--hover);
+  transform: scale(1.05);
 }
 
     @media (max-width: 600px) {
@@ -143,14 +199,14 @@ footer {
   <!-- Services -->
   <section class="section" id="services">
     <h2>My Services</h2>
-    <div class="services-list">
-  <a href="#booking"><div>Regular Retwist — $60</div></a>
-  <a href="#booking"><div>Barrel Twist — $65</div></a>
-  <a href="#booking"><div>Two Strand Twist — $65</div></a>
-  <a href="#booking"><div>Braids — $65</div></a>
-  <a href="#booking"><div>Deep Massage Wash — $75</div></a>
-  <a href="#booking"><div>Detoxic — $80</div></a>
-</div>
+     <div class="services-list">
+      <div> Regular Retwist — $60</div>
+      <div> Barrel Twist — $65</div>
+      <div> Two Strand Twist — $65</div>
+      <div> Braids — $65</div>
+      <div> Deep Massage Wash — $75</div>
+      <div> Detoxic — $80</div>
+    </div>
   </section>
 
   <!-- Booking -->
@@ -184,13 +240,12 @@ footer {
 
 </body>
 </html>
-<a
-  href="https://squareup.com/appointments/book/exotichair"
-  class="floating-book"
-  target="_blank"
-  rel="noopener"
->
-  Book Appointment
 </a>
+<script>
+  <div onclick=" goToBooking()">MY SERVICES-60</div> {
+    document.getElementById("booking").scrollInto-View({
+      behavior: "smooth"
+    });
+  }
+</script>
 </body>
-</html>
